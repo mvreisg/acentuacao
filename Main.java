@@ -26,10 +26,10 @@ public class Main {
             if (right > 0){
                 ratio = (right / (totalChars + wrong)) * 10;
             }
+            String statistics = String.format("Erros: %.0f | Acertos: %.0f | Nota: %.2f", wrong, right, ratio);
             if (chars.isEmpty()){
-                
                 System.out.println("Parabéns! Você digitou todos os caracteres!");
-                System.out.println(String.format("Erros: %.0f | Acertos: %.0f | Nota: %.2f", wrong, right, ratio));
+                System.out.println(statistics);
                 System.out.println("Pressione ENTER para encerrar.");
                 scanner.nextLine();
                 exit = true;
@@ -37,7 +37,7 @@ public class Main {
             }
             int index = random.nextInt(chars.size());
             int selected = chars.get(index);
-            System.out.println(String.format("Erros: %.0f | Acertos: %.0f | Nota: %.2f", wrong, right, ratio));
+            System.out.println(statistics);
             System.out.println(String.format("Digite o caractere %s", Character.toString(selected)));
             String text = scanner.nextLine();
             if (text.length() == 1 && text.contains(Character.toString(selected))){
